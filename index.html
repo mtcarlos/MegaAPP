@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organizador Pro</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <nav class="tab-bar">
+    <button class="tab active" data-tab="dashboard">
+      <span class="material-icons">dashboard</span>
+    </button>
+    <button class="tab" data-tab="tasks">
+      <span class="material-icons">check_circle</span>
+    </button>
+    <button class="tab" data-tab="shopping">
+      <span class="material-icons">shopping_cart</span>
+    </button>
+    <button class="tab" data-tab="expenses">
+      <span class="material-icons">attach_money</span>
+    </button>
+    <button class="tab" data-tab="calendar">
+      <span class="material-icons">event</span>
+    </button>
+    <button class="tab" data-tab="pomodoro">
+      <span class="material-icons">timer</span>
+    </button>
+  </nav>
+
+  <header class="app-header">
+    <div>Organizador</div>
+  </header>
+
+  <main>
+    <section id="dashboard" class="tab-content active">
+      <h2>Resumen Diario</h2>
+      <div class="card">
+        <p><strong>Tareas pendientes:</strong> <span id="task-count">0</span></p>
+        <p><strong>Gastos de hoy:</strong> $<span id="expense-total">0.00</span></p>
+      </div>
+      <div class="card">
+        <p><strong>Clima actual:</strong> 🌤️ <em>22ºC - Soleado</em></p>
+      </div>
+    </section>
+
+    <section id="tasks" class="tab-content">
+      <h2>Mis Tareas</h2>
+      <input type="text" id="task-input" placeholder="Escribe una tarea...">
+      <button id="add-task">Añadir tarea</button>
+      <ul id="task-list"></ul>
+    </section>
+
+    <section id="shopping" class="tab-content">
+      <h2>Lista de Compras</h2>
+      <input type="text" id="shopping-input" placeholder="Producto o ítem...">
+      <button id="add-shopping">Añadir ítem</button>
+      <ul id="shopping-list"></ul>
+    </section>
+
+    <section id="expenses" class="tab-content">
+      <h2>Registro de Gastos</h2>
+      <input type="text" id="expense-desc" placeholder="Descripción...">
+      <input type="number" id="expense-amount" placeholder="Monto...">
+      <button id="add-expense">Añadir gasto</button>
+      <ul id="expense-list"></ul>
+    </section>
+
+    <section id="calendar" class="tab-content">
+      <h2>Calendario</h2>
+      <div id="calendar-grid"></div>
+      <input type="date" id="event-date">
+      <input type="text" id="event-desc" placeholder="Evento del día...">
+      <button id="add-event">Guardar evento</button>
+      <ul id="event-list"></ul>
+    </section>
+
+    <section id="pomodoro" class="tab-content">
+      <h2>Temporizador Pomodoro</h2>
+      <div id="pomodoro-timer">25:00</div>
+      <div class="pomodoro-controls">
+        <button id="start-pomodoro">Iniciar</button>
+        <button id="pause-pomodoro">Pausar</button>
+        <button id="reset-pomodoro">Resetear</button>
+      </div>
+      <p>Modo: <strong id="pomodoro-mode">Trabajo</strong></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
